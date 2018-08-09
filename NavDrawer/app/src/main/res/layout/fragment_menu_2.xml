@@ -9,21 +9,15 @@
         android:orientation="vertical"
         android:gravity="center">
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Klicke auf den Button um ein neues Abo hinzuzufügen"
+            android:text="TextView"
+            android:layout_gravity="center"
             android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Neu" />
+            />
     </LinearLayout>
 
 </RelativeLayout>

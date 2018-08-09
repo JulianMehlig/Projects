@@ -10,24 +10,10 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <TextView
-            android:id="@+id/textView"
+        <ListView
+            android:id="@+id/allsubs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Klicke hier, um deine aktuellen Abos zu verwalten"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
-            android:text="Verwalten" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </RelativeLayout>

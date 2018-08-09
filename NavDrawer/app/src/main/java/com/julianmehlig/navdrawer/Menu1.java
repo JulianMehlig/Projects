@@ -2,6 +2,7 @@ package com.julianmehlig.navdrawer;
 
 /**
  * Created by Julian on 07.08.2018.
+ * Activity mss in Fragment laufen!!!! DB muss erstellt und ausgelesen werden! List muss erstell werden und in die Datenbank gespeichert werden / oder in TextDatei.. 
  */
 
 import android.os.Bundle;
@@ -16,8 +17,8 @@ import android.view.ViewGroup;
  */
 
 
-public class Menu1 extends Fragment {
-
+public class Menu1 extends Fragment
+{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,7 +29,8 @@ public class Menu1 extends Fragment {
 
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
+    {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Überblick");
