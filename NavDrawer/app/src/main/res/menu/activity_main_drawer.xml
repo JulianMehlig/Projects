@@ -4,15 +4,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_menu1"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@android:drawable/ic_menu_agenda"
             android:title="Überblick" />
         <item
             android:id="@+id/nav_menu2"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@android:drawable/ic_menu_add"
             android:title="Neues Abo hinzufügen" />
         <item
             android:id="@+id/nav_menu3"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@android:drawable/ic_menu_edit"
             android:title="Abos verwalten" />
 
     </group>

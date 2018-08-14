@@ -10,16 +10,18 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyCustomAdapter extends BaseAdapter implements ListAdapter
 {
-    private ArrayList<String> list = new ArrayList<String>();
+    private List<Subscription> list = new ArrayList<>();
     private Context context;
 
 
 
-    public MyCustomAdapter(ArrayList<String> list, Context context) {
-        this.list = list;
+    public MyCustomAdapter(List<Subscription> list, Context context)
+    {
+        this.list =list;
         this.context = context;
     }
 
@@ -29,12 +31,13 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter
     }
 
     @Override
-    public Object getItem(int pos) {
+    public Subscription getItem(int pos) {
         return list.get(pos);
     }
 
     @Override
-    public long getItemId(int pos) {
+    public long getItemId(int pos)
+    {
         return 0;
         //just return 0 if your list items do not have an Id variable.
     }
@@ -50,7 +53,9 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
-        listItemText.setText(list.get(position));
+        TextView listItemCost = (TextView)view.findViewById(R.id.second_text_view);
+        listItemText.setText(list.get(position).toString());
+        listItemCost.setText(String.valueOf(Math.round(list.get(position).getCost()*100.0)/100.0));
 
         //Handle buttons and add onClickListeners
         Button deleteBtn = (Button)view.findViewById(R.id.delete_btn);
@@ -59,6 +64,8 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter
             @Override
             public void onClick(View v) {
                 //do something
+                DBHelper db = new DBHelper(v.getContext());
+                db.deleteBook(getItem(position));
                 list.remove(position); //or some other task
                 notifyDataSetChanged();
             }

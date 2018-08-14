@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -24,6 +24,62 @@
         android:textStyle="bold"/>
 
 
+
+
+</RelativeLayout>-->
+
+<!-- Clickable and selectableItemBackground are optional -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/two_line_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#e5e5e5"
+    android:clickable="true"
+    android:minHeight="72dp"
+    android:paddingEnd="?listPreferredItemPaddingRight"
+    android:paddingLeft="?listPreferredItemPaddingLeft"
+    android:paddingRight="?listPreferredItemPaddingRight"
+    android:paddingStart="?listPreferredItemPaddingLeft">
+
+
+    <LinearLayout
+        android:id="@+id/lines_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toEndOf="@+id/primary_action"
+        android:layout_toLeftOf="@+id/secondary_action"
+        android:layout_toRightOf="@+id/primary_action"
+        android:layout_toStartOf="@+id/secondary_action"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        tools:ignore="UnknownId">
+
+        <TextView
+            android:id="@+id/list_item_string"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="First Line" />
+
+        <TextView
+            android:id="@+id/second_text_view"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            tools:text="Second Line"
+            android:textColor="#8d00c9"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Can be replaced by a widget -->
     <Button
         android:id="@+id/delete_btn"
         android:layout_width="wrap_content"
@@ -31,6 +87,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
-        android:text="Delete" />
-
+        android:textColor="#000000"
+        android:background="@drawable/buttonshape"
+        android:text="Entfernen" />
 </RelativeLayout>
