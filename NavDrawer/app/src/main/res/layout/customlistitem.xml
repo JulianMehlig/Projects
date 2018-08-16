@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/list_item_string"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="8dp"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/list_item_cost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="8dp"
-        android:textSize="18dp"
-        android:textStyle="bold"/>
-
-
-
-
-</RelativeLayout>-->
-
-<!-- Clickable and selectableItemBackground are optional -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/two_line_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#e5e5e5"
+    android:background="#91d4ff"
     android:clickable="true"
     android:minHeight="72dp"
     android:paddingEnd="?listPreferredItemPaddingRight"
@@ -66,7 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            tools:text="First Line" />
+            tools:text="First Line"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/second_text_view"
@@ -75,7 +46,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             tools:text="Second Line"
-            android:textColor="#8d00c9"
+            android:textColor="@android:color/black"
             android:textStyle="bold"/>
     </LinearLayout>
 
@@ -87,7 +58,8 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
-        android:textColor="#000000"
         android:background="@drawable/buttonshape"
-        android:text="Entfernen" />
+        android:text="Entfernen"
+        android:textColor="#000000"
+        android:typeface="normal" />
 </RelativeLayout>

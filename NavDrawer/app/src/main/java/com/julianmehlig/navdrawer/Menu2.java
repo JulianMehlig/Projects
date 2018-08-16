@@ -8,6 +8,7 @@ import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,20 +28,14 @@ public class Menu2 extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        //returning our layout file
-        //change R.layout.yourlayoutfilename for each of your fragments
         return inflater.inflate(R.layout.fragment_menu_2, container, false);
-
-
     }
 
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
     {
-
         super.onViewCreated(view, savedInstanceState);
-        //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Neues Abo hinzufügen");
 
         final EditText name = (EditText) getView().findViewById(R.id.name);
@@ -52,16 +47,34 @@ public class Menu2 extends Fragment
             @Override
             public void onClick(View v)
             {
-                DBHelper db = new DBHelper(getContext());
-                Subscription s = new Subscription();
+                String check2 = monthcost.getText().toString();
+                String check = name.getText().toString();
+                if (!check.isEmpty() && !check2.isEmpty())
+                {
+                    DBHelper db = new DBHelper(getContext());
+                    Subscription s = new Subscription();
 
-                String ss = new String(name.getText().toString());
-                Double d = new Double(monthcost.getText().toString()).doubleValue();
+                    String ss = new String(name.getText().toString());
+                    Double d = new Double(monthcost.getText().toString()).doubleValue();
 
-                s.setName(ss);
-                s.setCost(d);
-                db.addBook(s);
+                    s.setName(ss);
+                    s.setCost(d);
+                    db.addBook(s);
+
+                    name.setText(null);
+                    monthcost.setText(null);
+                }
+                    else
+                    {
+                        View coordinatorLayout = v;
+                        Snackbar snackbar = Snackbar
+                                .make(coordinatorLayout, "Felder nicht korrekt befüllt!", Snackbar.LENGTH_LONG);
+
+                        snackbar.show();
+                    }
             }
-        });
+    });
+
+
     }
 }

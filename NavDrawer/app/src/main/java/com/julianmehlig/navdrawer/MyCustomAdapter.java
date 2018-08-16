@@ -55,7 +55,7 @@ public class MyCustomAdapter extends BaseAdapter implements ListAdapter
         TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
         TextView listItemCost = (TextView)view.findViewById(R.id.second_text_view);
         listItemText.setText(list.get(position).toString());
-        listItemCost.setText(String.valueOf(Math.round(list.get(position).getCost()*100.0)/100.0));
+        listItemCost.setText(String.valueOf(Math.round(list.get(position).getCost()*100.0)/100.0) + "€");
 
         //Handle buttons and add onClickListeners
         Button deleteBtn = (Button)view.findViewById(R.id.delete_btn);
